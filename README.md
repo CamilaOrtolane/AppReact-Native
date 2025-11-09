@@ -1,2 +1,2 @@
-* Introdução a Dispositivos Moveis
-  - Camila O. Ortolane
+# Introdução a Dispositivos Moveis
+* Camila O. Ortolane
