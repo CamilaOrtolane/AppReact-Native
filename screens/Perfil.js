@@ -1,19 +1,41 @@
-import React from "react";
 import { View, Text, Button } from "react-native";
 
-export default function Perfil({ route, navigation }) {
-  const { nome, telefone, email, endereco } = route.params;
+export default function Detail(props) {
+  const { nome, telefone, email, observacao, endereco} = props.route.params;
 
   return (
     <View style={{ padding: 20 }}>
-      <Text style={{ fontSize: 18 }}>Detalhes do Contato</Text>
+      <Text style={{ fontSize: 18 }}>Tela de Detalhes</Text>
       <Text>Nome: {nome}</Text>
       <Text>Telefone: {telefone}</Text>
-      <Text>E-mail: {email || "Não informado"}</Text>
-      <Text>Endereço: {endereco || "Não informado"}</Text>
-
-      <Button title="Voltar para Contatos" onPress={() => navigation.goBack()} />
+      <Text>E-mail: {email}</Text>
+      <Text>Observação: {observacao}</Text>
+      <Text>Endereço: {endereco}</Text>
+      <Button
+        title="Voltar para Contatos"
+        onPress={function () {
+          props.navigation.navigate("Contatos");
+        }}
+      />
     </View>
   );
 }
+// import React from "react";
+// import { View, Text, Button } from "react-native";
+
+// export default function Perfil({ route, navigation }) {
+//   const { nome, telefone, email, endereco } = route.params;
+
+//   return (
+//     <View style={{ padding: 20 }}>
+//       <Text style={{ fontSize: 18 }}>Detalhes do Contato</Text>
+//       <Text>Nome: {nome}</Text>
+//       <Text>Telefone: {telefone}</Text>
+//       <Text>E-mail: {email || "Não informado"}</Text>
+//       <Text>Endereço: {endereco || "Não informado"}</Text>
+
+//       <Button title="Voltar para Contatos" onPress={() => navigation.goBack()} />
+//     </View>
+//   );
+// }
 
