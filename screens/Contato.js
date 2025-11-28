@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 
 export default function Contact(props) {
 
+  // O motivo de usar useState é que, quando a lista for atualizada,
+  // a tela também atualiza automaticamente.
   const [lista, setLista] = useState([]);
 
+  //Aqui retorna para a tela principal já com os dados atualizados.
   const telaAtiva = useIsFocused();
 
   useEffect(
@@ -23,6 +26,11 @@ export default function Contact(props) {
             lista.map (
               function (contato) {
 
+                {/* O map usado aqui é para os dados dinâmicos, ou seja
+                  ele serve para seja criado um "card" com os dados de todos os contatos,
+                  sem precisar fazer isso manualmente */}
+
+                  {/* Essa parte é parte de separar os dados para serem exibidos: */}
               return (
                 <View key={contato.id} style={{ marginTop: 15 }}>
                   <Text>Nome: {contato.nome}</Text>
@@ -49,37 +57,4 @@ export default function Contact(props) {
 }
 
 
-
-// import React, { useContext } from "react";
-// import { View, Text, Button, ScrollView } from "react-native";
-// import { ContatoContext } from "../context/ContatoContext";
-
-// export default function Contato({ navigation }) {
-//   const { contatos } = useContext(ContatoContext);
-
-//   return (
-//     <ScrollView style={{ padding: 20 }}>
-//       <Text style={{ fontSize: 18 }}>Lista de Contatos</Text>
-
-//       {contatos.map((c) => (
-//         <View key={c.id} style={{ marginTop: 15 }}>
-//           <Text>Nome: {c.nome}</Text>
-//           <Text>Telefone: {c.telefone}</Text>
-
-//           <Button
-//             title="Ver detalhes"
-//             onPress={() =>
-//               navigation.navigate("Perfil", {
-//                 nome: c.nome,
-//                 telefone: c.telefone,
-//                 email: c.email,
-//                 endereco: c.endereco,
-//               })
-//             }
-//           />
-//         </View>
-//       ))}
-//     </ScrollView>
-//   );
-// }
 

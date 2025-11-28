@@ -1,39 +1,41 @@
-// Simulando um banco de dados simples
+// Este arquivo funciona como um "banco de dados simulado".
+// essa é uma lista fixa de contatos para começar o app.
+// os novos contatos serão inseridos também, usando a função adicionarContato().
+
+// Os dados servem como exemplo para aparecer na tela do app
 let contatos = [
-{
+  {
     id: 1,
-    nome: "João Aquino",
-    telefone: "9999-1111",
-    email: "joao@email.com",
-    observacao: "obs 1",
-    endereco: "Rua America",
-},
-
-{
+    nome: "Camila Ortolane",
+    telefone: "6999280-8409",
+    email: "camila@gmail.com",
+    observacao: "Aluna",
+  },
+  {
     id: 2,
-    nome: "Maria das Graças",
-    telefone: "9999-2222",
-    email: "maria@email.com",
-    observacao: "obs 2",
-    endereco: "Rua America",
-},
-
-{
+    nome: "Dome",
+    telefone: "6999280-8409",
+    email: "Dome@email.com",
+    observacao: "Aluna",
+  },
+  {
     id: 3,
-    nome: "Carlos",
-    telefone: "9999-3333",
-    email: "carlos@email.com",
-    observacao: "obs 3",
-    endereco: "Rua America",
-    },
+    nome: "Maria",
+    telefone: "699280-8409",
+    email: "maria@email.com",
+    observacao: "Mãe",
+  },
 ];
-// Apenas retornar a lista
+
+// Esta função apenas devolve todos os contatos existentes.
+// As telas usam ela para exibir os dados.
 export function getContatos() {
-    return contatos;
+  return contatos;
 }
-// Apenas inserir na lista
+
+// Esta função adiciona um novo contato na lista.
+// Aqui também criamos um ID novo automaticamente.
 export function adicionarContato(novoContato) {
-    // id sequencial simples
-    novoContato.id = contatos.length + 1;
-    contatos.push(novoContato);
+  novoContato.id = contatos.length + 1;
+  contatos.push(novoContato);           
 }
